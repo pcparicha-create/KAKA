@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -43,6 +44,7 @@
 
             font-size: 30px;
             font-weight: bold;
+
             letter-spacing: 4px;
 
             margin-bottom: 40px;
@@ -54,21 +56,24 @@
             width: 100%;
 
             padding: 13px 15px;
+
             margin-bottom: 8px;
 
             background: transparent;
+
             color: #aeb3bd;
 
             border: none;
+
             border-radius: 9px;
 
             text-align: left;
+
             font-size: 15px;
 
             cursor: pointer;
-            text-decoration: none;
 
-            transition: 0.2s;
+            text-decoration: none;
         }
 
         .nav-btn:hover {
@@ -79,6 +84,7 @@
         .nav-btn.active {
             background: white;
             color: #111;
+
             font-weight: bold;
         }
 
@@ -90,15 +96,8 @@
 
             width: calc(100% - 30px);
 
-            background: #20232a;
             color: #ff7777;
         }
-
-        .logout:hover {
-            background: #2b2022;
-            color: #ff9999;
-        }
-
 
         /* MAIN */
 
@@ -112,6 +111,7 @@
             display: flex;
 
             justify-content: space-between;
+
             align-items: center;
 
             margin-bottom: 30px;
@@ -124,54 +124,74 @@
         .subtitle {
             color: #858a95;
 
-            margin-top: 6px;
+            margin-top: 7px;
 
             font-size: 14px;
         }
 
+        /* MONTH BOX */
 
-        /* SAVE BUTTON */
+        .month-box {
+            background: #17191f;
+
+            border: 1px solid #292c33;
+
+            border-radius: 14px;
+
+            padding: 20px;
+
+            margin-bottom: 25px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .month-title {
+            color: #858a95;
+
+            font-size: 13px;
+
+            margin-bottom: 7px;
+        }
+
+        .month-name {
+            font-size: 24px;
+
+            font-weight: bold;
+        }
 
         .save-btn {
             background: white;
+
             color: #111;
 
             border: none;
 
-            padding: 12px 20px;
+            padding: 13px 20px;
 
             border-radius: 9px;
 
-            font-size: 14px;
             font-weight: bold;
 
             cursor: pointer;
-
-            transition: 0.2s;
         }
 
         .save-btn:hover {
-            background: #dddddd;
-
-            transform: translateY(-2px);
-        }
-
-        .save-btn:active {
-            transform: translateY(0);
+            background: #ddd;
         }
 
         #saveMessage {
-            color: #7ee787;
-
-            font-size: 13px;
-
             margin-top: 8px;
 
             text-align: right;
 
-            min-height: 16px;
-        }
+            font-size: 13px;
 
+            color: #7ee787;
+        }
 
         /* STATS */
 
@@ -194,14 +214,6 @@
             border-radius: 14px;
 
             padding: 22px;
-
-            transition: 0.2s;
-        }
-
-        .stat-card:hover {
-            border-color: #41444d;
-
-            transform: translateY(-2px);
         }
 
         .stat-title {
@@ -234,8 +246,7 @@
             color: #c792ea;
         }
 
-
-        /* SECTION */
+        /* SECTIONS */
 
         .section {
             background: #17191f;
@@ -249,19 +260,11 @@
             margin-bottom: 25px;
         }
 
-        .section-header {
-            display: flex;
-
-            justify-content: space-between;
-            align-items: center;
+        .section h2 {
+            font-size: 20px;
 
             margin-bottom: 20px;
         }
-
-        .section-header h2 {
-            font-size: 20px;
-        }
-
 
         /* QUICK ACTIONS */
 
@@ -290,16 +293,11 @@
             text-align: center;
 
             font-weight: bold;
-
-            transition: 0.2s;
         }
 
         .action-btn:hover {
             background: #292c33;
-
-            transform: translateY(-2px);
         }
-
 
         /* MONTHLY PROFITS */
 
@@ -315,20 +313,20 @@
             display: grid;
 
             grid-template-columns:
-                100px
+                130px
                 1fr
                 1fr
                 1fr;
 
-            align-items: center;
-
             gap: 15px;
 
-            padding: 15px;
+            align-items: center;
 
             background: #20232a;
 
-            border-radius: 9px;
+            padding: 16px;
+
+            border-radius: 10px;
         }
 
         .month-name {
@@ -338,7 +336,7 @@
         .month-data {
             color: #aeb3bd;
 
-            font-size: 13px;
+            font-size: 14px;
         }
 
         .month-profit {
@@ -347,19 +345,13 @@
             font-weight: bold;
         }
 
-
-        /* EMPTY */
-
         .empty {
             color: #686d77;
 
             text-align: center;
 
-            padding: 25px;
+            padding: 20px;
         }
-
-
-        /* RESPONSIVE */
 
         @media (max-width: 1000px) {
 
@@ -368,12 +360,7 @@
                     repeat(2, 1fr);
             }
 
-            .actions {
-                grid-template-columns:
-                    1fr 1fr;
-            }
         }
-
 
         @media (max-width: 700px) {
 
@@ -395,12 +382,16 @@
                 gap: 15px;
             }
 
-            .save-btn {
-                width: 100%;
+            .month-box {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 15px;
             }
 
-            #saveMessage {
-                text-align: left;
+            .save-btn {
+                width: 100%;
             }
 
             .stats {
@@ -414,6 +405,7 @@
             .month {
                 grid-template-columns: 1fr;
             }
+
         }
 
     </style>
@@ -432,14 +424,12 @@
             KAKA
         </div>
 
-
         <a
             class="nav-btn active"
             href="KAKAPROJ(home).html"
         >
             Home
         </a>
-
 
         <a
             class="nav-btn"
@@ -448,14 +438,12 @@
             Inventory
         </a>
 
-
         <a
             class="nav-btn"
             href="buyKAKA.html"
         >
             Buy
         </a>
-
 
         <a
             class="nav-btn"
@@ -464,14 +452,12 @@
             Sell
         </a>
 
-
         <a
             class="nav-btn"
             href="histroyKAKA.html"
         >
             History
         </a>
-
 
         <button
             class="nav-btn logout"
@@ -488,7 +474,7 @@
     <div class="main">
 
 
-        <!-- TOP -->
+        <!-- HEADER -->
 
         <div class="top">
 
@@ -499,8 +485,30 @@
                 </h1>
 
                 <p class="subtitle">
-                    Welcome to your KAKA Inventory Management System
+                    KAKA Inventory Management System
                 </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- CURRENT MONTH -->
+
+        <div class="month-box">
+
+            <div>
+
+                <div class="month-title">
+                    CURRENT BUSINESS MONTH
+                </div>
+
+                <div
+                    class="month-name"
+                    id="currentMonthDisplay"
+                >
+                    Month 1 • September
+                </div>
 
             </div>
 
@@ -509,9 +517,9 @@
 
                 <button
                     class="save-btn"
-                    onclick="saveProgress()"
+                    onclick="saveMonth()"
                 >
-                    💾 SAVE PROGRESS
+                    💾 SAVE MONTH & PROGRESS
                 </button>
 
                 <div id="saveMessage"></div>
@@ -525,8 +533,6 @@
 
         <div class="stats">
 
-
-            <!-- PROFIT -->
 
             <div class="stat-card">
 
@@ -544,12 +550,10 @@
             </div>
 
 
-            <!-- BOUGHT -->
-
             <div class="stat-card">
 
                 <div class="stat-title">
-                    Total Bought
+                    Current Month Bought
                 </div>
 
                 <div
@@ -562,12 +566,10 @@
             </div>
 
 
-            <!-- SOLD -->
-
             <div class="stat-card">
 
                 <div class="stat-title">
-                    Total Sold
+                    Current Month Sold
                 </div>
 
                 <div
@@ -579,8 +581,6 @@
 
             </div>
 
-
-            <!-- ITEMS -->
 
             <div class="stat-card">
 
@@ -604,17 +604,11 @@
 
         <div class="section">
 
-            <div class="section-header">
-
-                <h2>
-                    Quick Actions
-                </h2>
-
-            </div>
-
+            <h2>
+                Quick Actions
+            </h2>
 
             <div class="actions">
-
 
                 <a
                     class="action-btn"
@@ -623,14 +617,12 @@
                     📦 Inventory
                 </a>
 
-
                 <a
                     class="action-btn"
                     href="buyKAKA.html"
                 >
                     🛒 Buy Stock
                 </a>
-
 
                 <a
                     class="action-btn"
@@ -648,14 +640,9 @@
 
         <div class="section">
 
-            <div class="section-header">
-
-                <h2>
-                    Monthly Profits
-                </h2>
-
-            </div>
-
+            <h2>
+                Monthly Profits
+            </h2>
 
             <div
                 class="month-list"
@@ -671,12 +658,11 @@
     <script>
 
 
-        /* LOGIN PROTECTION */
+        /* LOGIN */
 
         if (
             localStorage.getItem("loggedIn")
-            !==
-            "true"
+            !== "true"
         ) {
 
             location.href =
@@ -685,7 +671,7 @@
         }
 
 
-        /* LOAD DATA */
+        /* DATA */
 
         let items =
             JSON.parse(
@@ -709,14 +695,6 @@
             ) || 0;
 
 
-        let transactions =
-            JSON.parse(
-                localStorage.getItem(
-                    "transactions"
-                )
-            ) || [];
-
-
         let monthlyProfits =
             JSON.parse(
                 localStorage.getItem(
@@ -725,7 +703,46 @@
             ) || [];
 
 
-        /* CURRENT MONTH */
+        /*
+            IMPORTANT:
+
+            Month 1 starts in the month
+            when the KAKA system is first used.
+
+            If this is September:
+
+            Month 1 = September
+            Month 2 = October
+            Month 3 = November
+            Month 4 = December
+            Month 5 = January
+        */
+
+
+        let startingMonth =
+            localStorage.getItem(
+                "startingMonth"
+            );
+
+
+        if (startingMonth === null) {
+
+            startingMonth =
+                new Date().getMonth();
+
+            localStorage.setItem(
+                "startingMonth",
+                startingMonth
+            );
+
+        }
+        else {
+
+            startingMonth =
+                Number(startingMonth);
+
+        }
+
 
         let currentMonth =
             Number(
@@ -747,48 +764,57 @@
         }
 
 
-        /*
-            The real month when
-            the KAKA system started.
-        */
+        /* MONTH NAMES */
 
-        const realStartingMonth =
-            new Date().getMonth();
+        const months = [
 
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
 
-        function getMonthName(
-            monthNumber
-        ) {
-
-            const months = [
-
-                "January",
-                "February",
-                "March",
-                "April",
-                "May",
-                "June",
-                "July",
-                "August",
-                "September",
-                "October",
-                "November",
-                "December"
-
-            ];
+        ];
 
 
-            return months[
+        function getMonthName() {
+
+            const index =
                 (
-                    realStartingMonth
+                    startingMonth
                     +
-                    monthNumber
+                    currentMonth
                     -
                     1
                 )
-                %
-                12
-            ];
+                % 12;
+
+            return months[index];
+
+        }
+
+
+        /* SHOW CURRENT MONTH */
+
+        function displayCurrentMonth() {
+
+            document.getElementById(
+                "currentMonthDisplay"
+            ).textContent =
+                "Month "
+                +
+                currentMonth
+                +
+                " • "
+                +
+                getMonthName();
 
         }
 
@@ -797,10 +823,10 @@
 
         function updateDashboard() {
 
-
             /*
-                Profit =
-                Total Sold - Total Bought
+                Profit is:
+
+                SOLD - BOUGHT
             */
 
             const profit =
@@ -811,21 +837,24 @@
             document.getElementById(
                 "profit"
             ).textContent =
-                "₹" +
+                "₹"
+                +
                 profit.toFixed(2);
 
 
             document.getElementById(
                 "bought"
             ).textContent =
-                "₹" +
+                "₹"
+                +
                 amountBought.toFixed(2);
 
 
             document.getElementById(
                 "sold"
             ).textContent =
-                "₹" +
+                "₹"
+                +
                 amountSold.toFixed(2);
 
 
@@ -835,12 +864,14 @@
                 items.length;
 
 
+            displayCurrentMonth();
+
             displayMonthlyProfits();
 
         }
 
 
-        /* MONTHLY PROFITS */
+        /* MONTHLY PROFIT HISTORY */
 
         function displayMonthlyProfits() {
 
@@ -860,7 +891,7 @@
                 list.innerHTML = `
 
                     <div class="empty">
-                        No completed months yet.
+                        No saved months yet.
                     </div>
 
                 `;
@@ -871,15 +902,14 @@
 
 
             /*
-                Newest month first
+                Newest first
             */
 
-            const newestFirst =
-                [...monthlyProfits]
-                .reverse();
+            const records =
+                [...monthlyProfits].reverse();
 
 
-            newestFirst.forEach(
+            records.forEach(
                 record => {
 
                     const div =
@@ -895,26 +925,44 @@
                     div.innerHTML = `
 
                         <div class="month-name">
-                            Month ${record.monthNumber}
+
+                            Month
+                            ${record.monthNumber}
+
                             <br>
-                            <small>
-                                ${record.monthName}
-                            </small>
+
+                            ${record.monthName}
+
                         </div>
 
+
                         <div class="month-data">
+
                             Bought:
-                            ₹${Number(record.bought).toFixed(2)}
+                            ₹${Number(
+                                record.bought
+                            ).toFixed(2)}
+
                         </div>
 
+
                         <div class="month-data">
+
                             Sold:
-                            ₹${Number(record.sold).toFixed(2)}
+                            ₹${Number(
+                                record.sold
+                            ).toFixed(2)}
+
                         </div>
+
 
                         <div class="month-profit">
+
                             Profit:
-                            ₹${Number(record.profit).toFixed(2)}
+                            ₹${Number(
+                                record.profit
+                            ).toFixed(2)}
+
                         </div>
 
                     `;
@@ -928,41 +976,85 @@
         }
 
 
-        /* SAVE PROGRESS */
+        /* SAVE MONTH */
 
-        function saveProgress() {
+        function saveMonth() {
 
 
             /*
-                Save all KAKA data again.
-
-                The other pages already save their
-                data automatically, but this button
-                makes a manual save as well.
+                Make sure we have the
+                newest inventory data.
             */
 
+            items =
+                JSON.parse(
+                    localStorage.getItem(
+                        "items"
+                    )
+                ) || [];
+
+
+            amountBought =
+                Number(
+                    localStorage.getItem(
+                        "amountBought"
+                    )
+                ) || 0;
+
+
+            amountSold =
+                Number(
+                    localStorage.getItem(
+                        "amountSold"
+                    )
+                ) || 0;
+
+
+            const profit =
+                amountSold -
+                amountBought;
+
+
+            /*
+                Create monthly record
+            */
+
+            const monthRecord = {
+
+                monthNumber:
+                    currentMonth,
+
+                monthName:
+                    getMonthName(),
+
+                bought:
+                    amountBought,
+
+                sold:
+                    amountSold,
+
+                profit:
+                    profit
+
+            };
+
+
+            /*
+                Add it to history
+            */
+
+            monthlyProfits.push(
+                monthRecord
+            );
+
+
+            /*
+                SAVE EVERYTHING
+            */
 
             localStorage.setItem(
                 "items",
                 JSON.stringify(items)
-            );
-
-
-            localStorage.setItem(
-                "amountBought",
-                amountBought
-            );
-
-
-            localStorage.setItem(
-                "amountSold",
-                amountSold
-            );
-
-
-            localStorage.setItem(
-                "transactions",
-                JSON.stringify(transactions)
             );
 
 
@@ -972,6 +1064,42 @@
             );
 
 
+            /*
+                Reset current month
+                money counters
+            */
+
+            amountBought = 0;
+
+            amountSold = 0;
+
+
+            localStorage.setItem(
+                "amountBought",
+                0
+            );
+
+
+            localStorage.setItem(
+                "amountSold",
+                0
+            );
+
+
+            /*
+                Move to next month
+            */
+
+            currentMonth++;
+
+
+            if (currentMonth > 12) {
+
+                currentMonth = 1;
+
+            }
+
+
             localStorage.setItem(
                 "currentMonth",
                 currentMonth
@@ -979,7 +1107,7 @@
 
 
             /*
-                Show confirmation
+                Confirmation
             */
 
             const message =
@@ -989,13 +1117,17 @@
 
 
             message.textContent =
-                "✓ Progress saved!";
+                "✓ Month saved!";
+
+
+            updateDashboard();
 
 
             setTimeout(
                 function() {
 
-                    message.textContent = "";
+                    message.textContent =
+                        "";
 
                 },
                 2500
@@ -1024,6 +1156,7 @@
         updateDashboard();
 
     </script>
+
 
 </body>
 
