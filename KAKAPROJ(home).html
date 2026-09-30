@@ -2,11 +2,10 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>KAKA - Home</title>
+    <title>KAKA - Dashboard</title>
 
     <style>
 
@@ -23,7 +22,6 @@
             min-height: 100vh;
         }
 
-
         /* SIDEBAR */
 
         .sidebar {
@@ -35,73 +33,70 @@
             height: 100vh;
 
             background: #17191f;
+            border-right: 1px solid #292c33;
 
             padding: 25px 15px;
-
-            border-right: 1px solid #292c33;
         }
-
 
         .logo {
-            font-size: 28px;
-            font-weight: bold;
-
             text-align: center;
 
-            margin-bottom: 40px;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 4px;
 
-            letter-spacing: 2px;
+            margin-bottom: 40px;
         }
 
-
         .nav-btn {
+            display: block;
+
             width: 100%;
 
-            padding: 14px;
-
-            margin-bottom: 10px;
-
-            border: none;
-
-            border-radius: 10px;
+            padding: 13px 15px;
+            margin-bottom: 8px;
 
             background: transparent;
+            color: #aeb3bd;
 
-            color: #bfc2c9;
+            border: none;
+            border-radius: 9px;
 
             text-align: left;
-
             font-size: 15px;
 
             cursor: pointer;
+            text-decoration: none;
 
             transition: 0.2s;
         }
 
-
         .nav-btn:hover {
-            background: #252830;
+            background: #24272e;
             color: white;
         }
-
 
         .nav-btn.active {
-            background: #2d313a;
-            color: white;
+            background: white;
+            color: #111;
+            font-weight: bold;
         }
-
-
-        /* LOGOUT */
 
         .logout {
-            margin-top: 30px;
-            color: #ff6b6b;
+            position: absolute;
+
+            bottom: 25px;
+            left: 15px;
+
+            width: calc(100% - 30px);
+
+            background: #20232a;
+            color: #ff7777;
         }
 
-
         .logout:hover {
-            background: #352326;
-            color: #ff8585;
+            background: #2b2022;
+            color: #ff9999;
         }
 
 
@@ -109,63 +104,72 @@
 
         .main {
             margin-left: 230px;
+
             padding: 40px;
         }
 
+        .top {
+            display: flex;
 
-        .header {
+            justify-content: space-between;
+            align-items: center;
+
             margin-bottom: 30px;
         }
 
-
-        .header h1 {
-            font-size: 34px;
-            margin-bottom: 8px;
+        h1 {
+            font-size: 32px;
         }
 
+        .subtitle {
+            color: #858a95;
 
-        .header p {
-            color: #8d929d;
-        }
-
-
-        /* PROFIT CARD */
-
-        .profit-card {
-            background: #17191f;
-
-            border: 1px solid #292c33;
-
-            border-radius: 20px;
-
-            padding: 30px;
-
-            margin-bottom: 25px;
-        }
-
-
-        .profit-label {
-            color: #8d929d;
+            margin-top: 6px;
 
             font-size: 14px;
-
-            margin-bottom: 10px;
         }
 
 
-        .profit {
-            font-size: 42px;
+        /* SAVE BUTTON */
 
+        .save-btn {
+            background: white;
+            color: #111;
+
+            border: none;
+
+            padding: 12px 20px;
+
+            border-radius: 9px;
+
+            font-size: 14px;
             font-weight: bold;
 
-            margin-bottom: 10px;
+            cursor: pointer;
+
+            transition: 0.2s;
         }
 
+        .save-btn:hover {
+            background: #dddddd;
 
-        .month {
-            color: #8d929d;
+            transform: translateY(-2px);
+        }
 
-            font-size: 14px;
+        .save-btn:active {
+            transform: translateY(0);
+        }
+
+        #saveMessage {
+            color: #7ee787;
+
+            font-size: 13px;
+
+            margin-top: 8px;
+
+            text-align: right;
+
+            min-height: 16px;
         }
 
 
@@ -175,60 +179,87 @@
             display: grid;
 
             grid-template-columns:
-                repeat(3, 1fr);
+                repeat(4, 1fr);
 
-            gap: 20px;
+            gap: 15px;
 
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
-
 
         .stat-card {
             background: #17191f;
 
             border: 1px solid #292c33;
 
-            border-radius: 16px;
+            border-radius: 14px;
 
             padding: 22px;
+
+            transition: 0.2s;
         }
 
+        .stat-card:hover {
+            border-color: #41444d;
+
+            transform: translateY(-2px);
+        }
 
         .stat-title {
-            color: #8d929d;
+            color: #858a95;
 
             font-size: 13px;
 
             margin-bottom: 10px;
         }
 
-
         .stat-value {
-            font-size: 24px;
+            font-size: 25px;
 
             font-weight: bold;
         }
 
+        .profit {
+            color: #7ee787;
+        }
 
-        /* SECTIONS */
+        .bought {
+            color: #ffb86c;
+        }
+
+        .sold {
+            color: #78a9ff;
+        }
+
+        .items {
+            color: #c792ea;
+        }
+
+
+        /* SECTION */
 
         .section {
             background: #17191f;
 
             border: 1px solid #292c33;
 
-            border-radius: 18px;
+            border-radius: 15px;
 
             padding: 25px;
 
             margin-bottom: 25px;
         }
 
+        .section-header {
+            display: flex;
 
-        .section h2 {
-            font-size: 20px;
+            justify-content: space-between;
+            align-items: center;
 
             margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 20px;
         }
 
 
@@ -240,31 +271,31 @@
             grid-template-columns:
                 repeat(3, 1fr);
 
-            gap: 15px;
+            gap: 12px;
         }
 
+        .action-btn {
+            padding: 18px;
 
-        .action {
             background: #20232a;
-
-            border: 1px solid #343841;
-
-            border-radius: 12px;
-
-            padding: 20px;
 
             color: white;
 
-            cursor: pointer;
+            border: 1px solid #292c33;
 
-            font-size: 15px;
+            border-radius: 10px;
+
+            text-decoration: none;
+
+            text-align: center;
+
+            font-weight: bold;
 
             transition: 0.2s;
         }
 
-
-        .action:hover {
-            background: #292d36;
+        .action-btn:hover {
+            background: #292c33;
 
             transform: translateY(-2px);
         }
@@ -272,29 +303,47 @@
 
         /* MONTHLY PROFITS */
 
-        .month-row {
+        .month-list {
             display: flex;
 
-            justify-content: space-between;
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+        .month {
+            display: grid;
+
+            grid-template-columns:
+                100px
+                1fr
+                1fr
+                1fr;
 
             align-items: center;
 
-            padding: 15px;
+            gap: 15px;
 
-            margin-bottom: 10px;
+            padding: 15px;
 
             background: #20232a;
 
-            border-radius: 10px;
+            border-radius: 9px;
         }
-
 
         .month-name {
             font-weight: bold;
         }
 
+        .month-data {
+            color: #aeb3bd;
+
+            font-size: 13px;
+        }
 
         .month-profit {
+            color: #7ee787;
+
             font-weight: bold;
         }
 
@@ -302,69 +351,69 @@
         /* EMPTY */
 
         .empty {
-            color: #777c86;
+            color: #686d77;
 
             text-align: center;
 
-            padding: 20px;
+            padding: 25px;
         }
 
 
-        /* MOBILE */
+        /* RESPONSIVE */
 
-        @media (max-width: 800px) {
+        @media (max-width: 1000px) {
+
+            .stats {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .actions {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 700px) {
 
             .sidebar {
-                position: relative;
-
-                width: 100%;
-
-                height: auto;
-
-                border-right: none;
-
-                border-bottom:
-                    1px solid #292c33;
+                width: 180px;
             }
-
-
-            .logo {
-                margin-bottom: 20px;
-            }
-
-
-            .nav-btn {
-                display: inline-block;
-
-                width: auto;
-
-                margin-right: 5px;
-
-                padding: 10px 12px;
-            }
-
-
-            .logout {
-                margin-top: 0;
-            }
-
 
             .main {
-                margin-left: 0;
+                margin-left: 180px;
 
-                padding: 20px;
+                padding: 25px;
             }
 
+            .top {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 15px;
+            }
+
+            .save-btn {
+                width: 100%;
+            }
+
+            #saveMessage {
+                text-align: left;
+            }
 
             .stats {
                 grid-template-columns: 1fr;
             }
 
-
             .actions {
                 grid-template-columns: 1fr;
             }
 
+            .month {
+                grid-template-columns: 1fr;
+            }
         }
 
     </style>
@@ -384,57 +433,51 @@
         </div>
 
 
-        <button
+        <a
             class="nav-btn active"
-            onclick="location.href='KAKAPROJ(home).html'">
+            href="KAKAPROJ(home).html"
+        >
+            Home
+        </a>
 
-            🏠 Home
 
-        </button>
-
-
-        <button
+        <a
             class="nav-btn"
-            onclick="location.href='ItemsKAKA.html'">
+            href="ItemsKAKA.html"
+        >
+            Inventory
+        </a>
 
-            📦 Inventory
 
-        </button>
-
-
-        <button
+        <a
             class="nav-btn"
-            onclick="location.href='buyKAKA.html'">
+            href="buyKAKA.html"
+        >
+            Buy
+        </a>
 
-            🛒 Buy
 
-        </button>
-
-
-        <button
+        <a
             class="nav-btn"
-            onclick="location.href='sellKAKA.html'">
+            href="sellKAKA.html"
+        >
+            Sell
+        </a>
 
-            💰 Sell
 
-        </button>
-
-
-        <button
+        <a
             class="nav-btn"
-            onclick="location.href='histroyKAKA.html'">
-
-            📜 History
-
-        </button>
+            href="histroyKAKA.html"
+        >
+            History
+        </a>
 
 
         <button
             class="nav-btn logout"
-            onclick="logout()">
-
-            🚪 Logout
-
+            onclick="logout()"
+        >
+            Logout
         </button>
 
     </div>
@@ -445,40 +488,33 @@
     <div class="main">
 
 
-        <div class="header">
+        <!-- TOP -->
 
-            <h1>
-                Dashboard
-            </h1>
+        <div class="top">
 
-            <p>
-                Welcome to your KAKA inventory system.
-            </p>
+            <div>
 
-        </div>
+                <h1>
+                    Dashboard
+                </h1>
 
-
-        <!-- CURRENT PROFIT -->
-
-        <div class="profit-card">
-
-            <div class="profit-label">
-                CURRENT MONTH PROFIT
-            </div>
-
-
-            <div
-                class="profit"
-                id="profit">
-
-                ₹0.00
+                <p class="subtitle">
+                    Welcome to your KAKA Inventory Management System
+                </p>
 
             </div>
 
 
-            <div
-                class="month"
-                id="month">
+            <div>
+
+                <button
+                    class="save-btn"
+                    onclick="saveProgress()"
+                >
+                    💾 SAVE PROGRESS
+                </button>
+
+                <div id="saveMessage"></div>
 
             </div>
 
@@ -490,55 +526,73 @@
         <div class="stats">
 
 
+            <!-- PROFIT -->
+
             <div class="stat-card">
 
                 <div class="stat-title">
-                    TOTAL BOUGHT
+                    Current Month Profit
                 </div>
 
-
                 <div
-                    class="stat-value"
-                    id="bought">
-
+                    class="stat-value profit"
+                    id="profit"
+                >
                     ₹0.00
-
                 </div>
 
             </div>
 
 
+            <!-- BOUGHT -->
+
             <div class="stat-card">
 
                 <div class="stat-title">
-                    TOTAL SOLD
+                    Total Bought
                 </div>
 
-
                 <div
-                    class="stat-value"
-                    id="sold">
-
+                    class="stat-value bought"
+                    id="bought"
+                >
                     ₹0.00
-
                 </div>
 
             </div>
 
 
+            <!-- SOLD -->
+
             <div class="stat-card">
 
                 <div class="stat-title">
-                    ITEMS IN INVENTORY
+                    Total Sold
                 </div>
 
+                <div
+                    class="stat-value sold"
+                    id="sold"
+                >
+                    ₹0.00
+                </div>
+
+            </div>
+
+
+            <!-- ITEMS -->
+
+            <div class="stat-card">
+
+                <div class="stat-title">
+                    Items in Inventory
+                </div>
 
                 <div
-                    class="stat-value"
-                    id="items">
-
+                    class="stat-value items"
+                    id="items"
+                >
                     0
-
                 </div>
 
             </div>
@@ -550,39 +604,40 @@
 
         <div class="section">
 
-            <h2>
-                Quick Actions
-            </h2>
+            <div class="section-header">
+
+                <h2>
+                    Quick Actions
+                </h2>
+
+            </div>
 
 
             <div class="actions">
 
 
-                <button
-                    class="action"
-                    onclick="location.href='ItemsKAKA.html'">
+                <a
+                    class="action-btn"
+                    href="ItemsKAKA.html"
+                >
+                    📦 Inventory
+                </a>
 
-                    📦 Manage Inventory
 
-                </button>
-
-
-                <button
-                    class="action"
-                    onclick="location.href='buyKAKA.html'">
-
+                <a
+                    class="action-btn"
+                    href="buyKAKA.html"
+                >
                     🛒 Buy Stock
+                </a>
 
-                </button>
 
-
-                <button
-                    class="action"
-                    onclick="location.href='sellKAKA.html'">
-
+                <a
+                    class="action-btn"
+                    href="sellKAKA.html"
+                >
                     💰 Sell Stock
-
-                </button>
+                </a>
 
             </div>
 
@@ -593,14 +648,19 @@
 
         <div class="section">
 
-            <h2>
-                Monthly Profits
-            </h2>
+            <div class="section-header">
 
-
-            <div id="monthlyProfits">
+                <h2>
+                    Monthly Profits
+                </h2>
 
             </div>
+
+
+            <div
+                class="month-list"
+                id="monthList"
+            ></div>
 
         </div>
 
@@ -611,13 +671,12 @@
     <script>
 
 
-        /* =========================
-           LOGIN PROTECTION
-        ========================= */
+        /* LOGIN PROTECTION */
 
         if (
             localStorage.getItem("loggedIn")
-            !== "true"
+            !==
+            "true"
         ) {
 
             location.href =
@@ -626,25 +685,13 @@
         }
 
 
-        /* =========================
-           LOGOUT
-        ========================= */
+        /* LOAD DATA */
 
-        function logout() {
+        let items =
+            JSON.parse(
+                localStorage.getItem("items")
+            ) || [];
 
-            localStorage.removeItem(
-                "loggedIn"
-            );
-
-            location.href =
-                "login PAGE1.html";
-
-        }
-
-
-        /* =========================
-           GET DATA
-        ========================= */
 
         let amountBought =
             Number(
@@ -662,10 +709,10 @@
             ) || 0;
 
 
-        let items =
+        let transactions =
             JSON.parse(
                 localStorage.getItem(
-                    "items"
+                    "transactions"
                 )
             ) || [];
 
@@ -678,9 +725,7 @@
             ) || [];
 
 
-        /* =========================
-           CURRENT MONTH
-        ========================= */
+        /* CURRENT MONTH */
 
         let currentMonth =
             Number(
@@ -702,15 +747,18 @@
         }
 
 
-        /* =========================
-           REAL STARTING MONTH
-        ========================= */
+        /*
+            The real month when
+            the KAKA system started.
+        */
 
         const realStartingMonth =
             new Date().getMonth();
 
 
-        function getMonthName(monthNumber) {
+        function getMonthName(
+            monthNumber
+        ) {
 
             const months = [
 
@@ -733,182 +781,247 @@
             return months[
                 (
                     realStartingMonth
-                    + monthNumber
-                    - 1
-                ) % 12
+                    +
+                    monthNumber
+                    -
+                    1
+                )
+                %
+                12
             ];
 
         }
 
 
-        /* =========================
-           CURRENT MONTH DISPLAY
-        ========================= */
+        /* UPDATE DASHBOARD */
 
-        document.getElementById(
-            "month"
-        ).innerHTML =
-
-            "Month " +
-            currentMonth +
-            " • " +
-            getMonthName(
-                currentMonth
-            );
+        function updateDashboard() {
 
 
-        /* =========================
-           PROFIT
-        ========================= */
+            /*
+                Profit =
+                Total Sold - Total Bought
+            */
 
-        let profit =
-            amountSold - amountBought;
-
-
-        document.getElementById(
-            "profit"
-        ).innerHTML =
-
-            "₹" +
-            profit.toFixed(2);
+            const profit =
+                amountSold -
+                amountBought;
 
 
-        /* =========================
-           BOUGHT
-        ========================= */
-
-        document.getElementById(
-            "bought"
-        ).innerHTML =
-
-            "₹" +
-            amountBought.toFixed(2);
-
-
-        /* =========================
-           SOLD
-        ========================= */
-
-        document.getElementById(
-            "sold"
-        ).innerHTML =
-
-            "₹" +
-            amountSold.toFixed(2);
-
-
-        /* =========================
-           INVENTORY COUNT
-        ========================= */
-
-        document.getElementById(
-            "items"
-        ).innerHTML =
-            items.length;
-
-
-        /* =========================
-           MONTHLY PROFITS
-        ========================= */
-
-        const monthlyDiv =
             document.getElementById(
-                "monthlyProfits"
-            );
+                "profit"
+            ).textContent =
+                "₹" +
+                profit.toFixed(2);
 
 
-        if (
-            monthlyProfits.length === 0
-        ) {
+            document.getElementById(
+                "bought"
+            ).textContent =
+                "₹" +
+                amountBought.toFixed(2);
 
-            monthlyDiv.innerHTML = `
 
-                <div class="empty">
+            document.getElementById(
+                "sold"
+            ).textContent =
+                "₹" +
+                amountSold.toFixed(2);
 
-                    No completed months yet.
 
-                </div>
+            document.getElementById(
+                "items"
+            ).textContent =
+                items.length;
 
-            `;
+
+            displayMonthlyProfits();
 
         }
 
-        else {
 
-            monthlyDiv.innerHTML = "";
+        /* MONTHLY PROFITS */
 
+        function displayMonthlyProfits() {
 
-            monthlyProfits
-                .slice()
-                .reverse()
-                .forEach(record => {
-
-
-                    monthlyDiv.innerHTML += `
-
-                        <div class="month-row">
+            const list =
+                document.getElementById(
+                    "monthList"
+                );
 
 
-                            <div>
+            list.innerHTML = "";
 
 
-                                <div
-                                    class="month-name">
+            if (
+                monthlyProfits.length === 0
+            ) {
 
-                                    Month
-                                    ${record.monthNumber}
+                list.innerHTML = `
 
-                                    •
+                    <div class="empty">
+                        No completed months yet.
+                    </div>
 
-                                    ${record.monthName}
+                `;
 
-                                </div>
+                return;
 
-
-                                <div
-                                    style="
-                                    color:#858a95;
-                                    font-size:13px;
-                                    margin-top:5px;
-                                    ">
-
-                                    Bought:
-
-                                    ₹${Number(
-                                        record.bought
-                                    ).toFixed(2)}
-
-                                    &nbsp; • &nbsp;
-
-                                    Sold:
-
-                                    ₹${Number(
-                                        record.sold
-                                    ).toFixed(2)}
-
-                                </div>
+            }
 
 
-                            </div>
+            /*
+                Newest month first
+            */
+
+            const newestFirst =
+                [...monthlyProfits]
+                .reverse();
 
 
-                            <div
-                                class="month-profit">
+            newestFirst.forEach(
+                record => {
 
-                                ₹${Number(
-                                    record.profit
-                                ).toFixed(2)}
+                    const div =
+                        document.createElement(
+                            "div"
+                        );
 
-                            </div>
+
+                    div.className =
+                        "month";
 
 
+                    div.innerHTML = `
+
+                        <div class="month-name">
+                            Month ${record.monthNumber}
+                            <br>
+                            <small>
+                                ${record.monthName}
+                            </small>
+                        </div>
+
+                        <div class="month-data">
+                            Bought:
+                            ₹${Number(record.bought).toFixed(2)}
+                        </div>
+
+                        <div class="month-data">
+                            Sold:
+                            ₹${Number(record.sold).toFixed(2)}
+                        </div>
+
+                        <div class="month-profit">
+                            Profit:
+                            ₹${Number(record.profit).toFixed(2)}
                         </div>
 
                     `;
 
-                });
+
+                    list.appendChild(div);
+
+                }
+            );
 
         }
+
+
+        /* SAVE PROGRESS */
+
+        function saveProgress() {
+
+
+            /*
+                Save all KAKA data again.
+
+                The other pages already save their
+                data automatically, but this button
+                makes a manual save as well.
+            */
+
+
+            localStorage.setItem(
+                "items",
+                JSON.stringify(items)
+            );
+
+
+            localStorage.setItem(
+                "amountBought",
+                amountBought
+            );
+
+
+            localStorage.setItem(
+                "amountSold",
+                amountSold
+            );
+
+
+            localStorage.setItem(
+                "transactions",
+                JSON.stringify(transactions)
+            );
+
+
+            localStorage.setItem(
+                "monthlyProfits",
+                JSON.stringify(monthlyProfits)
+            );
+
+
+            localStorage.setItem(
+                "currentMonth",
+                currentMonth
+            );
+
+
+            /*
+                Show confirmation
+            */
+
+            const message =
+                document.getElementById(
+                    "saveMessage"
+                );
+
+
+            message.textContent =
+                "✓ Progress saved!";
+
+
+            setTimeout(
+                function() {
+
+                    message.textContent = "";
+
+                },
+                2500
+            );
+
+        }
+
+
+        /* LOGOUT */
+
+        function logout() {
+
+            localStorage.removeItem(
+                "loggedIn"
+            );
+
+
+            location.href =
+                "login PAGE1.html";
+
+        }
+
+
+        /* START */
+
+        updateDashboard();
 
     </script>
 
